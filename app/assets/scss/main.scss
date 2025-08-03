@@ -1,0 +1,276 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --tan: #b69d74;
+  --navy: #1f2839;
+  --off-white: #f2eeeb;
+  --denin: #7787a1;
+  --steel: #6a7078;
+  --fog: #dcdcdc;
+
+  --edge: 2rem;
+  --transition-speed: 0.3s;
+
+  --font-body: 'Figtree', sans-serif;
+  --font-heading: 'Figtree', sans-serif;
+
+  --spacing-md: 8rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --spacing-md: 14rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--navy);
+  background: var(--off-white);
+  line-height: 1.5;
+  font-family: var(--font-body);
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.6rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  font-size: 1.6rem;
+  line-height: 140%;
+  padding: 1.5rem;
+  margin: 0 0 1rem 0;
+  color: var(--navy);
+  background: var(--white);
+  border: var(--tan);
+  border-radius: 0.4rem;
+}
+
+form {
+  display: block;
+  width: 100%;
+}
+
+.btn {
+  background-color: var(--navy);
+  color: var(--white);
+  display: inline-block;
+  padding: 1.2rem 4rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  line-height: 120%;
+  border-radius: 10rem;
+  transition: var(--transition-speed);
+  border: none;
+  cursor: pointer;
+  &--secondary {
+    background-color: var(--off-white);
+    color: var(--navy);
+    svg {
+      fill: var(--navy);
+      path {
+        fill: var(--navy);
+      }
+    }
+  }
+  &--tertiary {
+    background-color: var(--tan);
+    color: var(--black);
+    svg {
+      fill: var(--black);
+      path {
+        fill: var(--black);
+      }
+    }
+  }
+  &:disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
+  &--text {
+    padding: 0;
+    margin: 0;
+    color: var(--tan);
+    text-decoration: none;
+    font-size: 1.8rem;
+    background: none;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    svg {
+      fill: var(--tan);
+      path {
+        fill: var(--tan);
+      }
+    }
+  }
+  &--icon {
+    display: flex;
+    align-items: center;
+    svg {
+      display: block;
+      margin-left: 1rem;
+      margin-top: 0.3rem;
+      width: 1.3rem;
+    }
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  font-weight: 700;
+  margin: 2rem 0;
+}
+
+p {
+  margin: 1.6rem 0;
+  a {
+    text-decoration: underline;
+  }
+}
+
+.text-caption {
+  font-size: 1.2rem;
+}
+
+h1,
+.h1 {
+  font-size: 3.5rem;
+  line-height: 120%;
+  @media (min-width: 768px) {
+    font-size: 6rem;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 3.2rem;
+  line-height: 130%;
+  @media (min-width: 768px) {
+    font-size: 4.5rem;
+    line-height: 120%;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 2.4rem;
+  line-height: 130%;
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 1.6rem;
+  line-height: 135%;
+  @media (min-width: 768px) {
+    font-size: 1.8rem;
+    line-height: 140%;
+  }
+}
+
+h5,
+.h5 {
+  line-height: 140%;
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+}
+
+.visualy-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 160rem;
+  margin: 0 auto;
+  padding: 0 var(--edge);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-padding {
+  padding: var(--spacing-md) 0;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.scroll-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional default delay if no data attribute is provided */
+.scroll-reveal[data-sr-delay] {
+  transition-delay: var(--sr-delay, 0ms);
+}
